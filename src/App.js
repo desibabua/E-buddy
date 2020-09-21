@@ -1,8 +1,15 @@
 import React from 'react';
-import './App.css';
+import { BrowserRouter as Router } from 'react-router-dom';
+import './css/App.css';
+import './css/Header.css';
+import Header from './components/Header';
 
 const App = function () {
-  return <h1>Hello</h1>
-}
+  return (
+    <Router>
+      <Header />
+    </Router>
+  );
+};
 
 export default App;
