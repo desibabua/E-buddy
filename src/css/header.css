@@ -10,6 +10,7 @@
   width: 25%;
   display: flex;
   justify-content: baseline;
+  margin-right: 20px;
 }
 
 .nav {

@@ -1,16 +1,24 @@
-import React from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
-import Routes from './Routes/MainRoute'
-import './css/App.css';
-import './css/Header.css';
+import React, { useState } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+
+import Routes from './Routes/MainRoute';
 import Header from './components/Header';
 
+import './css/App.css';
+import './css/Header.css';
+
+import { User } from './Contexts';
+
 const App = function () {
+  const [user, setUser] = useState(null);
+
   return (
-    <Router>
-      <Header />
-      <Routes/>
-    </Router>
+    <User.Provider value={{ user, setUser }}>
+      <Router>
+        <Header />
+        <Routes />
+      </Router>
+    </User.Provider>
   );
 };
 
