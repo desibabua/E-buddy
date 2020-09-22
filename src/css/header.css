@@ -10,7 +10,6 @@
   width: 25%;
   display: flex;
   justify-content: baseline;
-  margin-right: 20px;
 }
 
 .nav {
@@ -38,7 +37,7 @@
 .logo-container {
   display: flex;
   flex-grow: 0;
-  width: 20%;
+  width: 25%;
 }
 
 .logo-container p{
