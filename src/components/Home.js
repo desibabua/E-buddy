@@ -1,15 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import requestAPIs from '../api/reqAPIs';
+
 import '../css/Home.css';
 
-const Home = function () {
+const Home = function (props) {
+  const [homeDetails, setHomeDetails] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    requestAPIs.home().then((details) => {
+      setHomeDetails(details);
+      setIsLoading(false);
+    });
+  }, []);
+
+  if (isLoading) {
+    return <h1>Loading...</h1>;
+  }
+  
   return (
     <div className="home">
-      <h1>CHECK US OUT</h1>
-      <p>
-        Welcome to E- buddy. Our great selection of products will cover all of
-        your needs, whatever and wherever they may be. Enjoy our exceptional
-        experience.
-      </p>
+      <h1>{homeDetails.title}</h1>
+      <p>{homeDetails.content}</p>
     </div>
   );
 };

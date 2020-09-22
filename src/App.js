@@ -8,12 +8,13 @@ import './css/App.css';
 import './css/Header.css';
 
 import { User } from './Contexts';
+import useUser from './hooks';
 
 const App = function () {
-  const [user, setUser] = useState(null);
+  const user = useUser();
 
   return (
-    <User.Provider value={{ user, setUser }}>
+    <User.Provider value={{ user }}>
       <Router>
         <Header />
         <Routes />
