@@ -31,12 +31,18 @@
 }
 
 .search-bar {
-  width: 60%;
+  width: 50%;
 }
 
 .logo-container {
+  display: flex;
   flex-grow: 0;
-  width: 10%;
+  width: 20%;
+}
+
+.logo-container p{
+  font-size:2.5rem;
+  margin:15px;
 }
 
 .logo {
