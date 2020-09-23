@@ -45,8 +45,11 @@
   display: flex;
   padding: 10px;
 }
+.price .discounted {
+  display: flex;
+}
 
-.price > div {
+.price div {
   margin-right: 20px;
   font-size: 1.1rem;
 }

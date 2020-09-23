@@ -16,7 +16,7 @@ const Product = function () {
     return <p>Loading...</p>;
   }
 
-  const { title, imgUrl, price, rating, totalReviews } = details;
+  const { title, imgUrl, price, rating } = details;
 
   return (
     <div className="product">
@@ -27,7 +27,7 @@ const Product = function () {
         <div className="info">
           <div className="title">{title}</div>
           <Prices price={price} />
-          <Ratings rating={rating} reviews={totalReviews} />
+          <Ratings rating={rating} />
         </div>
       </div>
     </div>

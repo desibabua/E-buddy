@@ -21,8 +21,8 @@
 
 .product .details .info {
   width: 50%;
-  height: 400px;
   margin: 20px;
+  padding:50px 20px;
 }
 
 .product .details .info .title {
@@ -31,15 +31,14 @@
 }
 
 .product .price {
-  margin: 20px 10px;
+  margin: 30px 10px 10px;
 }
 
-.product .price > div {
+.product .price div {
   font-size: 1.4rem;
 }
 
-.product .rating,
-.product .reviews {
+.product .rating {
   font-size: 1.4rem;
   margin: 10px;
   margin-left: 20px;
