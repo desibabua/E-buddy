@@ -1,0 +1,26 @@
+.product-nav-bar {
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.product-nav {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 1.2rem;
+  text-align: center;
+  border-bottom: 1px solid #8d93ab;
+}
+
+.active-product-nav {
+  border: 1px solid #8d93ab;
+  border-bottom: none;
+  background-color: #d6e0f0;
+}

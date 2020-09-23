@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import requestAPIs from '../api/reqAPIs';
 import ProductCard from './ProductCard';
+import ProductNav from './ProductsNav';
 
 const getProducts = function (products) {
   return products.map((product) => (
@@ -21,7 +22,12 @@ const Products = function () {
     return <p>Loading...</p>;
   }
 
-  return <div className="products">{getProducts(products)}</div>;
+  return (
+    <div>
+      <ProductNav />
+      <div className="products">{getProducts(products)}</div>
+    </div>
+  );
 };
 
 export default Products;

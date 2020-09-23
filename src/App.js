@@ -8,6 +8,7 @@ import './css/App.css';
 import './css/Header.css';
 import './css/Products.css';
 import './css/Product.css';
+import './css/ProductNav.css';
 
 import { User } from './Contexts';
 import useUser from './hooks';
