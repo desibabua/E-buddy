@@ -18,7 +18,7 @@ const NavBar = function (props) {
   return (
     <div className="navigation-bar">
       <Nav name="Home" url="/" />
-      <Nav name="Products" url="/products" />
+      <Nav name="Products" url="/products/all" />
       {!user && <a className="nav" href={red_url+'login'}>Login</a>}
       {user && <a className="nav" href={red_url+'logout'}>Logout</a>}
     </div>

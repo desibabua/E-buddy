@@ -8,6 +8,8 @@ const requestAPIs = {};
 
 requestAPIs.home = () => getFetch('/api/home');
 requestAPIs.login = () => getFetch('/api/login');
+requestAPIs.getProducts = (category) => getFetch(`/api/products/${category}`);
+requestAPIs.getProduct = (id) => getFetch(`/api/product/${id}`);
 
 export default requestAPIs;
 export { getFetch };
