@@ -14,7 +14,7 @@
 
 .nav {
   width: 25%;
-  color:black;
+  color: black;
   margin: auto 0;
   font-size: 1.25rem;
   text-align: center;
@@ -30,21 +30,38 @@
   text-decoration: underline;
 }
 
-.search-bar {
-  width: 50%;
-}
-
 .logo-container {
   display: flex;
   flex-grow: 0;
   width: 25%;
 }
 
-.logo-container p{
-  font-size:2.5rem;
-  margin:15px;
+.logo-container p {
+  font-size: 2.5rem;
+  margin: 15px;
 }
 
 .logo {
   height: 80px;
+}
+
+.search-bar {
+  width: 50%;
+}
+
+.search-bar input {
+  width: 75%;
+  border:none;
+  margin-top:20px;
+  margin-left: 40px;
+  padding:5px 20px;
+  font-weight: 300;
+  font-size: 1.4rem;
+  background:transparent;
+  border-bottom: 3px solid #8d93ab;
+}
+
+.search-bar input:focus {
+  outline:none;
+  border-bottom: 3px solid #393b44;
 }
