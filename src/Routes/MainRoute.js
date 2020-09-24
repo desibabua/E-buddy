@@ -1,8 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-// import Login from './SubRoutes.js';
-
 import Home from '../components/Home.js';
 import Products from '../components/Products.js';
 import Product from '../components/Product.js';

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import requestAPIs from '../api/reqAPIs';
 import Prices from './Prices';
 import Ratings from './Ratings';
+import Reviews from './Reviews';
 
 const Product = function () {
   const { id } = useParams();
@@ -30,6 +31,7 @@ const Product = function () {
           <Ratings rating={rating} />
         </div>
       </div>
+      <Reviews id={id}/>
     </div>
   );
 };

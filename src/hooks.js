@@ -7,7 +7,7 @@ const useUser = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    getFetch('/api/getUser').then(({ user }) => setUser(user));
+    getFetch('/api/getUser').then((user) => user.name && setUser(user));
   }, [history]);
 
   return user;
