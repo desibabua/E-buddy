@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
-import {NavLink} from 'react-router-dom';
-import {User} from '../Contexts';
+import { NavLink } from 'react-router-dom';
+import { User } from '../Contexts';
 
-const red_url = 'http://localhost:3002/authenticate/';
+const login_url = 'http://localhost:3002/api/login';
+const logout_url = 'http://localhost:3002/api/logout';
 
 const Nav = function ({ url, name }) {
   return (
@@ -12,15 +13,27 @@ const Nav = function ({ url, name }) {
   );
 };
 
-const NavBar = function (props) {
+const UserOption = function () {
   const { user } = useContext(User);
+  let url = login_url;
+  let name = 'Login';
+  if (user) {
+    url = logout_url;
+    name = 'Logout';
+  }
+  return (
+    <a className="nav" href={url}>
+      {name}
+    </a>
+  );
+};
 
+const NavBar = function (props) {
   return (
     <div className="navigation-bar">
       <Nav name="Home" url="/" />
       <Nav name="Products" url="/products/all" />
-      {!user && <a className="nav" href={red_url+'login'}>Login</a>}
-      {user && <a className="nav" href={red_url+'logout'}>Logout</a>}
+      <UserOption />
     </div>
   );
 };

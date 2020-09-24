@@ -9,7 +9,7 @@
 .navigation-bar {
   width: 25%;
   display: flex;
-  justify-content: baseline;
+  justify-content: space-evenly;
 }
 
 .nav {

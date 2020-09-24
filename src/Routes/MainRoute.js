@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Login from './Login';
+
+// import Login from './SubRoutes.js';
 
 import Home from '../components/Home.js';
 import Products from '../components/Products.js';
@@ -14,7 +15,6 @@ const MainRoute = function () {
       <Route exact path="/products/:category" children={<Products />} />
       <Route exact path="/search" children={<SearchedProducts/>} />
       <Route exact path="/product/:id" children={<Product />} />
-      <Login exact path="/login" />
     </Switch>
   );
 };
