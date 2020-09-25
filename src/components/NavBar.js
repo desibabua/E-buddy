@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { User } from '../Contexts';
 
-const login_url = 'http://localhost:3002/api/login';
-const logout_url = 'http://localhost:3002/api/logout';
+const login_url = 'http://localhost:8000/api/login';
+const logout_url = 'http://localhost:8000/api/logout';
 
 const Nav = function ({ url, name }) {
   return (
