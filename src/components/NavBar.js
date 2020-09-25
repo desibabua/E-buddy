@@ -31,7 +31,7 @@ const UserOption = function () {
 const NavBar = function (props) {
   return (
     <div className="navigation-bar">
-      <Nav name="Home" url="/" />
+      <Nav name="Home" url="/home" />
       <Nav name="Products" url="/products/all" />
       <UserOption />
     </div>

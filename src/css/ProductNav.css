@@ -15,8 +15,8 @@
 }
 
 .active-product-nav {
-  border-bottom: none;
   border: 1px solid #8d93ab;
+  border-bottom: none;
   background-color: #d6e0f0;
 }
 
