@@ -1,9 +1,12 @@
 import React, { useContext } from 'react';
+import dotenv from 'dotenv';
 import { NavLink } from 'react-router-dom';
-import { User } from '../Contexts';
+import {User} from '../Contexts';
 
-const login_url = 'http://localhost:8000/api/login';
-const logout_url = 'http://localhost:8000/api/logout';
+dotenv.config();
+
+const login_url = process.env.REACT_APP_LOGIN_POINT;
+const logout_url = process.env.REACT_APP_LOGOUT_POINT;
 
 const Nav = function ({ url, name }) {
   return (
