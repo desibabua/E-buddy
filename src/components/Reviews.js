@@ -31,7 +31,7 @@ const Reviews = function ({ id }) {
 
   useEffect(() => {
     requestAPIs.getProductReviews(id).then(setReviews);
-  }, []);
+  }, [id]);
 
   const onSubmit = function (value) {
     requestAPIs
