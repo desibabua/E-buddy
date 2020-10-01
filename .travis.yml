@@ -1,0 +1,10 @@
+language: node_js
+node_js: lts/*
+install: npm install
+before_deploy: "./deploy.sh"
+deploy:
+  provider: heroku
+  app: product-catalog-step
+  api_key:
+    secure: B3nfnF7bDRei5zz2NLAEYOf7J4UqY3MVOShIKBD81CEgEirQgkbhoGhsvRa+R1VivtstcbmOGMzSVk20P5IeMTgVIW0A1R1fPsmwFaT18U2mc2FSOLvnk4JHaUNsUFz4X/+2bwmeTWjB+d/j+LyV6uA2ktoxW3/eOek5yktxePFZ6NUlJpR6bjmWUh4HFAc/Jn/CqaXOXfY307hmWJzoqfKCtC7Wv7OLuXDpBWpZIMxugeGRs3xhfEieN/x9C7iWgBfYJMKXWNV5cdnLBCuIaBoKF9O6UvipyAexCPRgcVmS88SHabQy2Wu75pnNRAZMbPI5JOoe2rM5dIKcH7qnAzpfQ/j+kZoSXGm8ep7ahd8qAXSHQG22mSbU5mKDPwUz4JZMzv8ajFEjYgaVc0uUs/XZHnND8xSnghCSN9Cy2xkLf5rufCr79Ge9if0fZSLRr3Lzta4+HYoySey6ez135sk3Sc918XzMYKY4pxg3dwqLcb6JAd15m0Px7MDqjXTF7hzptyC0icZQO0A8TsdD7AEqVrJssCcAS3b7p/Csdt+fm0IcSvQF5YZZiRkMPlD1NRr+lTeirzyt5CS2RlSXHCXp62Czxp7VFy82+oOHqc+xlwLHOPJyo1h4OKs7LlpTHrxEdTYKdQuBYVLzVW3hQPNZwIZc/1lcSaorfsJ9pXw=
+  skip_cleanup: true
