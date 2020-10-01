@@ -20,6 +20,8 @@ npm install 2> /dev/null
 npm test
 
 echo 'Creating build ...'
+ls
+pwd
 npm run build 2> /dev/null
 
 echo 'Merging build ...'
