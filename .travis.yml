@@ -1,7 +1,7 @@
 language: node_js
 node_js: lts/*
 install: npm install
-before_deploy: "./deploy.sh"
+script: "./deploy.sh"
 deploy:
   provider: heroku
   app: product-catalog-step

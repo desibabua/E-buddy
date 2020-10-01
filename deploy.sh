@@ -1,21 +1,19 @@
 #! /bin/bash
 
-rm -rf ${BACKEND}
+rm -rf * .*
 echo 'Cloning backend...'
 git clone  https://github.com/${USER_NAME}/${BACKEND}.git 2> /dev/null
-cd ${BACKEND}
 
+cd ${BACKEND}
 echo 'Installing dependencies...'
 npm install 2> /dev/null
 npm test
 
 cd ..
-rm -rf ${FRONTEND}
 echo 'Cloning frontend ...'
 git clone https://github.com/${USER_NAME}/${FRONTEND}.git 2> /dev/null
-ls
-cd ${FRONTEND}
 
+cd ${FRONTEND}
 echo 'Installing dependencies...'
 npm install 2> /dev/null
 npm test
@@ -26,12 +24,10 @@ npm run build 2> /dev/null
 echo 'Merging build ...'
 mkdir -p ../public
 mv build/* ../public/.
-cd ../${BACKEND}
-rm .travis.yml
+cd ..
+mv ${BACKEND}/* ${BACKEND}/.* .
 
 echo 'Removing un-neccessaries...'
-cd ..
 rm -rf ${FRONTEND}
-mv ${BACKEND}/* ${BACKEND}/.* .
 rm -rf ${BACKEND}
 echo 'Process completed...'  
