@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import styled from 'styled-components';
 import requestAPIs from '../api/reqAPIs';
 import ProductCard from './ProductCard';
+
+const StyledProducts = styled.div`
+  margin: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+`;
 
 const getProducts = function (products) {
   return products.map((product) => (
@@ -21,12 +29,8 @@ const Products = function () {
     return <p>Loading...</p>;
   }
 
-  return (
-    <div>
-      <div className="products">{getProducts(products)}</div>
-    </div>
-  );
+  return <StyledProducts children={getProducts(products)} />;
 };
 
 export default Products;
-export {getProducts};
+export { getProducts };

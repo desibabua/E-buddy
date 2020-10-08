@@ -1,17 +1,3 @@
-.header {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  height: 100px;
-  background-color: #d6e0f0;
-}
-
-.navigation-bar {
-  width: 25%;
-  display: flex;
-  justify-content: space-evenly;
-}
-
 .nav {
   width: 25%;
   color: black;
@@ -28,40 +14,4 @@
 
 .active-nav {
   text-decoration: underline;
-}
-
-.logo-container {
-  display: flex;
-  flex-grow: 0;
-  width: 25%;
-}
-
-.logo-container p {
-  font-size: 2.5rem;
-  margin: 15px;
-}
-
-.logo {
-  height: 80px;
-}
-
-.search-bar {
-  width: 50%;
-}
-
-.search-bar input {
-  width: 75%;
-  border:none;
-  margin-top:20px;
-  margin-left: 40px;
-  padding:5px 20px;
-  font-weight: 300;
-  font-size: 1.4rem;
-  background:transparent;
-  border-bottom: 3px solid #8d93ab;
-}
-
-.search-bar input:focus {
-  outline:none;
-  border-bottom: 3px solid #393b44;
 }

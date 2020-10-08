@@ -1,9 +1,18 @@
 import React, { useContext } from 'react';
 import dotenv from 'dotenv';
+
+import styled from 'styled-components';
+
 import { NavLink } from 'react-router-dom';
-import {User} from '../Contexts';
+import { User } from '../Contexts';
 
 dotenv.config();
+
+const NavigationBar = styled.div`
+  width: 25%;
+  display: flex;
+  justify-content: space-evenly;
+`;
 
 const login_url = process.env.REACT_APP_LOGIN_POINT;
 const logout_url = process.env.REACT_APP_LOGOUT_POINT;
@@ -33,11 +42,11 @@ const UserOption = function () {
 
 const NavBar = function (props) {
   return (
-    <div className="navigation-bar">
+    <NavigationBar>
       <Nav name="Home" url="/home" />
       <Nav name="Products" url="/products/all" />
       <UserOption />
-    </div>
+    </NavigationBar>
   );
 };
 

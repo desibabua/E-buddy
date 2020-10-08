@@ -8,6 +8,7 @@ import './css/index.css';
 
 import { User } from './Contexts';
 import useUser from './hooks';
+import ProductNav from './components/ProductsNav';
 
 const App = function () {
   const user = useUser();
@@ -16,6 +17,7 @@ const App = function () {
     <User.Provider value={{ user }}>
       <Router>
         <Header />
+        <ProductNav/>
         <Routes />
       </Router>
     </User.Provider>

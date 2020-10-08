@@ -1,9 +1,20 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+import styled from 'styled-components';
+
+const NavBar = styled.nav`
+  display: flex;
+`;
+
 const Nav = function ({ url, name }) {
   return (
-    <NavLink exact to={url} activeClassName="active-product-nav" className="product-nav">
+    <NavLink
+      exact
+      to={url}
+      activeClassName="active-product-nav"
+      className="product-nav"
+    >
       {name}
     </NavLink>
   );
@@ -11,7 +22,7 @@ const Nav = function ({ url, name }) {
 
 const ProductNav = function () {
   return (
-    <div className="product-nav-bar">
+    <NavBar>
       <Nav name="All" url="/products/all" />
       <Nav name="Clothes" url="/products/clothes" />
       <Nav name="Men" url="/products/men" />
@@ -20,7 +31,7 @@ const ProductNav = function () {
       <Nav name="Phones" url="/products/phone" />
       <Nav name="Sports" url="/products/sports" />
       <Nav name="Books" url="/products/books" />
-    </div>
+    </NavBar>
   );
 };
 

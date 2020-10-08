@@ -1,7 +1,22 @@
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+
 import requestAPIs from '../api/reqAPIs';
 
-import '../css/Home.css';
+const Title = styled.h1`
+  margin: 80px;
+  font-size: 3rem;
+  font-weight: 300;
+  text-align: center;
+`;
+
+const Content = styled.p`
+  width: 1000px;
+  font-size: 2rem;
+  font-weight: 300;
+  margin: 50px auto;
+  text-align: center;
+`;
 
 const Home = function (props) {
   const [homeDetails, setHomeDetails] = useState(null);
@@ -15,13 +30,13 @@ const Home = function (props) {
   }, []);
 
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return <Title>Loading...</Title>;
   }
-  
+
   return (
-    <div className="home">
-      <h1>{homeDetails.title}</h1>
-      <p>{homeDetails.content}</p>
+    <div>
+      <Title>{homeDetails.title}</Title>
+      <Content>{homeDetails.content}</Content>
     </div>
   );
 };
