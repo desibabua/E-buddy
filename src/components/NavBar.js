@@ -33,6 +33,7 @@ const UserOption = function () {
     url = logout_url;
     name = 'Logout';
   }
+  console.log(user)
   return (
     <a className="nav" href={url}>
       {name}

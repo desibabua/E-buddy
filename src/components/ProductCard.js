@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Prices from './Prices';
+import SponsoredTag from './SponseredTag';
 
 const Card = styled.div`
   width: 300px;
@@ -39,11 +40,12 @@ const Title = styled.div`
   }
 `;
 
-const ProductCard = function ({ product }) {
+const ProductCard = function ({ product, isSponsored }) {
   const { id, title, imgUrl, price } = product;
 
   return (
     <Card>
+      {isSponsored ? <SponsoredTag /> : <></>}
       <Figure>
         <Image src={imgUrl} alt="Loading..." />
       </Figure>
