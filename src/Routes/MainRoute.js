@@ -10,7 +10,7 @@ const MainRoute = function () {
   return (
     <Switch>
       <Route exact path="/">
-        <Redirect to="/products/all" />
+        <Redirect to="/home" />
       </Route>
       <Route exact path="/home" children={<Home />} />
       <Route exact path="/products/:category" children={<ProductsWithAds />} />
