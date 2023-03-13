@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import requestAPIs from '../api/reqAPIs';
 import ProductCard from './ProductCard';
+import SponsoredTag from './SponseredTag';
 
 const refrenceName = {
   'all': '',
@@ -18,13 +18,23 @@ const refrenceName = {
 const StyledSponseredProducts = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
   height: 470px;
   overflow: hidden;
+
+  .productCard {
+    margin: 10px;
+  }
+`;
+
+const StyledSponseredProductsContainer = styled.div`
+  border: 1px solid #c2d0dc;
+  border-radius: 10px;
+  background-color: aliceBlue;
+  padding: 20px;
 `;
 
 const getSponsoredProducts = function (products) {
-  return products.map((product) => (
+  return products.slice(0, 4).map((product) => (
     <ProductCard key={product.id} product={product} isSponsored={true} />
   ));
 };
@@ -42,14 +52,15 @@ const SponsoredProducts = function ({ category }) {
     }
   }, [category]);
 
-  if (!sponsoredproducts) {
-    return <p>Loading...</p>;
+  if (!sponsoredproducts || !sponsoredproducts.length) {
+    return <div></div>
   }
 
-  return <>
+  return <StyledSponseredProductsContainer>
     <h2 style={{ marginTop: '0px' }}>World's foremost {brandCategory} Brand</h2>
     <StyledSponseredProducts children={getSponsoredProducts(sponsoredproducts)} />
-  </>
+    <SponsoredTag />
+  </StyledSponseredProductsContainer>
 };
 
 export default SponsoredProducts;

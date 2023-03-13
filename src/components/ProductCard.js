@@ -44,7 +44,7 @@ const ProductCard = function ({ product }) {
   const { id, title, imgUrl, price, isSponsored } = product;
 
   return (
-    <Card>
+    <Card className='productCard'>
       {isSponsored ? <SponsoredTag /> : <></>}
       <Figure>
         <Image src={imgUrl} alt="Loading..." />
