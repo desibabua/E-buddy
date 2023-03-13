@@ -4,7 +4,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import Home from '../components/Home.js';
 import Product from '../components/Product.js';
 import ProductsWithAds from '../components/ProductsWithAds.js';
-import SearchedProducts from '../components/SearchedProducts';
+import SearchedProductsWithAds from '../components/SearchedProductsWithAds.js';
 
 const MainRoute = function () {
   return (
@@ -14,7 +14,7 @@ const MainRoute = function () {
       </Route>
       <Route exact path="/home" children={<Home />} />
       <Route exact path="/products/:category" children={<ProductsWithAds />} />
-      <Route exact path="/search" children={<SearchedProducts />} />
+      <Route exact path="/search" children={<SearchedProductsWithAds />} />
       <Route exact path="/product/:id" children={<Product />} />
     </Switch>
   );

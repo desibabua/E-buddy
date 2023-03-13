@@ -1,4 +1,5 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import Products from './Products';
 import SponsoredProducts from './SponsoredProducts';
@@ -10,7 +11,7 @@ const ProductsHolder = styled.div`
 const ProductsWithAds = function () {
     return (
         <ProductsHolder>
-            <SponsoredProducts />
+            <SponsoredProducts category={useParams().category} />
             <br />
             <br />
             <h2>RESULTS</h2>

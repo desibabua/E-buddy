@@ -29,8 +29,7 @@ const getSponsoredProducts = function (products) {
   ));
 };
 
-const SponsoredProducts = function () {
-  const { category } = useParams();
+const SponsoredProducts = function ({ category }) {
   const [sponsoredproducts, setSponsoredproducts] = useState(null);
   const [brandCategory, setBrandCategory] = useState('');
 
@@ -39,7 +38,7 @@ const SponsoredProducts = function () {
     if (category in refrenceName) {
       setBrandCategory(refrenceName[category])
     } else {
-      setBrandCategory(category.toUpperCase(0, 1) + category.toLowerCase().slice(1))
+      setBrandCategory(category.toUpperCase().slice(0, 1) + category.toLowerCase().slice(1))
     }
   }, [category]);
 
