@@ -40,8 +40,8 @@ const Title = styled.div`
   }
 `;
 
-const ProductCard = function ({ product, isSponsored }) {
-  const { id, title, imgUrl, price } = product;
+const ProductCard = function ({ product }) {
+  const { id, title, imgUrl, price, isSponsored } = product;
 
   return (
     <Card>

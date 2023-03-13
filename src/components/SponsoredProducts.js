@@ -4,11 +4,23 @@ import styled from 'styled-components';
 import requestAPIs from '../api/reqAPIs';
 import ProductCard from './ProductCard';
 
+const refrenceName = {
+  'all': '',
+  'clothes': 'Clothes',
+  'men': 'Men Clothes',
+  'women': 'Women Clothes',
+  'electronics': 'Electronics',
+  'phone': 'Phone',
+  'sports': 'Sports',
+  'books': 'Books',
+}
+
 const StyledSponseredProducts = styled.div`
-  margin: 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  height: 470px;
+  overflow: hidden;
 `;
 
 const getSponsoredProducts = function (products) {
@@ -20,16 +32,25 @@ const getSponsoredProducts = function (products) {
 const SponsoredProducts = function () {
   const { category } = useParams();
   const [sponsoredproducts, setSponsoredproducts] = useState(null);
+  const [brandCategory, setBrandCategory] = useState('');
 
   useEffect(() => {
     requestAPIs.getSponsoredProducts(category).then(setSponsoredproducts);
+    if (category in refrenceName) {
+      setBrandCategory(refrenceName[category])
+    } else {
+      setBrandCategory(category.toUpperCase(0, 1) + category.toLowerCase().slice(1))
+    }
   }, [category]);
 
   if (!sponsoredproducts) {
     return <p>Loading...</p>;
   }
 
-  return <StyledSponseredProducts children={getSponsoredProducts(sponsoredproducts)} />;
+  return <>
+    <h2 style={{ marginTop: '0px' }}>World's foremost {brandCategory} Brand</h2>
+    <StyledSponseredProducts children={getSponsoredProducts(sponsoredproducts)} />
+  </>
 };
 
 export default SponsoredProducts;

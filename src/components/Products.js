@@ -5,7 +5,7 @@ import requestAPIs from '../api/reqAPIs';
 import ProductCard from './ProductCard';
 
 const StyledProducts = styled.div`
-  margin: 50px;
+ 
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
