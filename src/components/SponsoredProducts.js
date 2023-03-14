@@ -33,18 +33,18 @@ const StyledSponseredProductsContainer = styled.div`
   padding: 20px;
 `;
 
-const getSponsoredProducts = function (products) {
+const getSponsoredBrands = function (products) {
   return products.slice(0, 4).map((product) => (
     <ProductCard key={product.id} product={product} isSponsored={true} />
   ));
 };
 
 const SponsoredProducts = function ({ category }) {
-  const [sponsoredproducts, setSponsoredproducts] = useState(null);
+  const [sponsoredBrands, setSponsoredBrands] = useState(null);
   const [brandCategory, setBrandCategory] = useState('');
 
   useEffect(() => {
-    requestAPIs.getSponsoredProducts(category).then(setSponsoredproducts);
+    requestAPIs.getSponsoredBrands(category).then(setSponsoredBrands);
     if (category in refrenceName) {
       setBrandCategory(refrenceName[category])
     } else {
@@ -52,13 +52,13 @@ const SponsoredProducts = function ({ category }) {
     }
   }, [category]);
 
-  if (!sponsoredproducts || !sponsoredproducts.length) {
+  if (!sponsoredBrands || !sponsoredBrands.length) {
     return <div></div>
   }
 
   return <StyledSponseredProductsContainer>
     <h2 style={{ marginTop: '0px' }}>World's foremost {brandCategory} Brand</h2>
-    <StyledSponseredProducts children={getSponsoredProducts(sponsoredproducts)} />
+    <StyledSponseredProducts children={getSponsoredBrands(sponsoredBrands)} />
     <SponsoredTag />
   </StyledSponseredProductsContainer>
 };
