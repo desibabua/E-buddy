@@ -12,9 +12,9 @@ const StyledProducts = styled.div`
 `;
 
 const getProducts = function (products) {
-  return products.map((product) => (
-    <ProductCard key={product.id} product={product} />
-  ));
+  return products.map((product) => {
+    return <ProductCard key={product.id} product={product} />
+  });
 };
 
 const Products = function () {

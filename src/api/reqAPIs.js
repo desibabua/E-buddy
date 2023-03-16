@@ -20,6 +20,7 @@ const requestAPIs = {};
 requestAPIs.home = () => getFetch('/api/home');
 requestAPIs.getProducts = (category) => getFetch(`/api/products/${category}`);
 requestAPIs.getSponsoredBrands = (category) => getFetch(`/api/sponsoredBrand/${category}`);
+requestAPIs.getSponsoredBanners = (category) => getFetch(`/api/sponsoredBanners/${category}`);
 requestAPIs.getProduct = (id) => getFetch(`/api/product/${id}`);
 requestAPIs.searchProducts = (value) => getFetch(`/api/search?input=${value}`);
 requestAPIs.getProductReviews = (id) => getFetch(`/api/review/${id}`);

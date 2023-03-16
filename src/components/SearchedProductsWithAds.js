@@ -2,6 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import SearchedProducts from './SearchedProducts';
+import SponsoredBanner from './SponsoredBanner';
 import SponsoredProducts from './SponsoredProducts';
 
 const ProductsHolder = styled.div`
@@ -15,6 +16,7 @@ const useQuery = function () {
 const SearchedProductsWithAds = function () {
     return (
         <ProductsHolder>
+            <SponsoredBanner category={useQuery().get('input')} />
             <SponsoredProducts category={useQuery().get('input')} />
             <br />
             <br />

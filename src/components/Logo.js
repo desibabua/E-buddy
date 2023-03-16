@@ -22,7 +22,7 @@ const Logo = function () {
   return (
     <StyledLogo>
       <LogoImg src={logo} alt="e-buddy-logo" />
-      <LogoCaption>E-BUDDY</LogoCaption>
+      <LogoCaption>E-Store</LogoCaption>
     </StyledLogo>
   );
 };
